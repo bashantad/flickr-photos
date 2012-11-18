@@ -1,10 +1,7 @@
-
-@import "fontawesome/css/font-awesome.css";
+/*@import "fontawesome/css/font-awesome.css";*/
 body {
     font: 16px/1 Helvetica, sans-serif;
 }
-
-
 #photos {
     float: left;
     width: 100%;
