@@ -37,7 +37,6 @@ var setupPhotos = (function ($) {
             dataType: 'jsonp'
         });
     }
-	
 	function loadAllPhotos (tags, max, callback) {
         var results = [];
         function handleResult (err, photos) {
@@ -104,6 +103,7 @@ var setupPhotos = (function ($) {
     var session;
     return function setup (tags, callback) {
 		getSessionPhotos();
+
         loadAllPhotos(tags, max_per_tag, function (err, items) {
             if (err) { return callback(err); }
 

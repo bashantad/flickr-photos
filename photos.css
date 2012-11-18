@@ -1,3 +1,4 @@
+
 @import "fontawesome/css/font-awesome.css";
 body {
     font: 16px/1 Helvetica, sans-serif;
@@ -20,8 +21,8 @@ body {
 .photo img {
     min-width: 160px;
     max-width: 240px;
-}
 
+}
 .icon-wrapper{
 	background: none repeat scroll 0 0 #CECECE;
     display: block;
@@ -29,3 +30,4 @@ body {
     padding:5px;
     width: 100%;
 }
+
