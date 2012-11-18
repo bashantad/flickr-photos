@@ -14,5 +14,4 @@ if(!array_key_exists($id[1],$_SESSION['photos'])){
 }
 $var = array("val"=>$class,"photos"=>$_SESSION['photos']);
 echo json_encode($var);
-//print_r($_SESSION['photos']);exit;
 ?>
