@@ -1,0 +1,31 @@
+@import "fontawesome/css/font-awesome.css";
+body {
+    font: 16px/1 Helvetica, sans-serif;
+}
+
+
+#photos {
+    float: left;
+    width: 100%;
+}
+
+.photo {
+    float: left;
+    margin: 0 2px 2px 0;
+    overflow: hidden;
+    height: 160px;
+}
+
+.photo,
+.photo img {
+    min-width: 160px;
+    max-width: 240px;
+}
+
+.icon-wrapper{
+	background: none repeat scroll 0 0 #CECECE;
+    display: block;
+    height: 15px;
+    padding:5px;
+    width: 100%;
+}
