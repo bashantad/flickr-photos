@@ -37,10 +37,12 @@ var setupPhotos = (function ($) {
             dataType: 'jsonp'
         });
     }
-	function loadAllPhotos (tags, max, callback) {
+    function loadAllPhotos (tags, max, callback) {
         var results = [];
         function handleResult (err, photos) {
-            if (err) { return callback(err); }
+            if (err) {
+                return callback(err);
+            }
 
             results.push(photos);
             if (results.length === tags.length) {
@@ -60,15 +62,15 @@ var setupPhotos = (function ($) {
         img.src = photo;
         var favIcon = document.createElement("i");
         favIcon.className = "icon-heart-empty favIcon";
-		length = session.length;
-		for(var i=0; i< length; i++){
-			if(session[i]==id){
-				favIcon.className = "icon-heart favIcon";
-			}
-		}
-		var wrapperSpan = document.createElement("span");
+        length = session.length;
+        for(var i=0; i< length; i++){
+            if(session[i]==id){
+                favIcon.className = "icon-heart favIcon";
+            }
+        }
+        var wrapperSpan = document.createElement("span");
         wrapperSpan.className = "icon-wrapper";
-		wrapperSpan.appendChild(favIcon);
+        wrapperSpan.appendChild(favIcon);
         var elm = document.createElement('div');
         elm.className = 'photo';
         elm.id= "photo-"+id
@@ -85,26 +87,28 @@ var setupPhotos = (function ($) {
     }
  
     function getSessionPhotos()
-	{
-		$.ajax({
-			dataType:'json',
-			url:"http://localhost/flickr-photos/getSessionVars.php",
-			success:function(response){
-				session = response.session;
-			},
-			error:function(response){
-				console.log("Ajax failed");
-			}
-		});
-	}
+    {
+        $.ajax({
+            dataType:'json',
+            url:"http://localhost/flickr-photos/getSessionVars.php",
+            success:function(response){
+                session = response.session;
+            },
+            error:function(response){
+                console.log("Ajax failed");
+            }
+        });
+    }
 
     // ----------------
     var max_per_tag = 4;
     var session;
     return function setup (tags, callback) {
-		getSessionPhotos();
+        getSessionPhotos();
         loadAllPhotos(tags, max_per_tag, function (err, items) {
-            if (err) { return callback(err); }
+            if (err) {
+                return callback(err);
+            }
             each(items.map(renderPhoto), imageAppender('photos'));
             callback();
         });
